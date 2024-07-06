@@ -1,0 +1,3 @@
+[submodule "Brand"]
+	path = Brand
+	url = git@github.com:Sheffield-StinGS/Brand.git
