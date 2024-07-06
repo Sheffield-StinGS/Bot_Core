@@ -8,6 +8,7 @@ import json #Library for interacting with the Config file
 #Loads the General config file
 config_file = open("config.json")
 config = json.load(config_file)
+core_config = config["core_data"]
 
 #Sets the permissions for the bot to be everything
 intents = discord.Intents.all()
