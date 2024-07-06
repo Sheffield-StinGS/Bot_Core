@@ -33,7 +33,7 @@ def printLog(message):
 def logCommand(context):
     command = context.invoked_with
     author = context.author
-    printLog(f'Command: {command} was triggered by {author}')
+    printLog(f'Command: \'{command}\' was triggered by \'{author}\'')
 
 def main():
     @bot.event
@@ -50,7 +50,7 @@ def main():
     @bot.command(name="Help", help="Shows this help menu")
     async def help(ctx):
         logCommand(ctx)
-        help_menu = discord.Embed(title=bot_config["Name"], url=bot_config["Git_Repo"], description=bot_config["Description"], colour=colour_list["stings_gold"])
+        help_menu = discord.Embed(title=bot_config["Name"], url=bot_config["Git_Repo"], description=bot_config["Description"], colour=colour_list["stings_light_gold"])
         help_menu.set_thumbnail(url="https://ssago.org/img/clubs/logos/23.png")
         for command in bot.commands:
             help_menu.add_field(name=command.name, value=command.help, inline=False)
