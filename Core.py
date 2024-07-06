@@ -2,6 +2,7 @@
 from datetime import datetime #Library for various Date-Time related functions
 import discord #Discord API Library
 from discord.ext import commands #Bot specific functionality
+from .colours import colour_list
 
 import json #Library for interacting with the Config file
 #Loads the General config file
@@ -49,7 +50,7 @@ def main():
     @bot.command(name="Help", help="Shows this help menu")
     async def help(ctx):
         logCommand(ctx)
-        help_menu = discord.Embed(title=bot_config["Name"], url=bot_config["Git_Repo"], description=bot_config["Description"], colour=0xF19306)
+        help_menu = discord.Embed(title=bot_config["Name"], url=bot_config["Git_Repo"], description=bot_config["Description"], colour=colour_list["stings_gold"])
         help_menu.set_thumbnail(url="https://ssago.org/img/clubs/logos/23.png")
         for command in bot.commands:
             help_menu.add_field(name=command.name, value=command.help, inline=False)
