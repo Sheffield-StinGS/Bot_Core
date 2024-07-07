@@ -1,12 +1,13 @@
 import discord
 
+#Path where the colour codes are located
 path = r"Bot_Core\Brand\colours.scss"
 
 colours_file = open(path, "r")
 
 colour_list = {}
 
-
+#Loads the colours from the general branding file and sets them to Discord readable values
 for line in colours_file:
     if line[0] == "$":
         colour_start = line.find("(") + 1

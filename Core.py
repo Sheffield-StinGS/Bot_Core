@@ -2,10 +2,10 @@
 from datetime import datetime #Library for various Date-Time related functions
 import discord #Discord API Library
 from discord.ext import commands #Bot specific functionality
-from .colours import colour_list
+from .colours import colour_list #Imports the defined stings colours in python form
 
 import json #Library for interacting with the Config file
-#Loads the General config file
+#Loads the General config file and sets the core config variable
 config_file = open("config.json")
 config = json.load(config_file)
 core_config = config["core_data"]
@@ -27,10 +27,12 @@ def createBot(name):
     bot.remove_command("help")
     return DISCORD_TOKEN
 
+#Prints a message to the output with the time added
 def printLog(message):
     time = datetime.now().strftime(time_format)
     print(f'[{time}] {message}')
 
+#Prints a message to the output whenever a command is triggered
 def logCommand(context):
     command = context.invoked_with
     author = context.author
@@ -39,7 +41,7 @@ def logCommand(context):
 def main():
     @bot.event
     async def on_ready():
-        printLog(f'{bot.user.name} has connected to Discord!')
+        printLog(f'{bot.user.name} has connected to Discord!') #Logs a message when the bot connects to discord
     
     @bot.command(name="Git", help="This provides a link to the Github Repository that contains all the code that makes me work")
     async def git(ctx):
