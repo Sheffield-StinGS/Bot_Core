@@ -1,4 +1,4 @@
-import discord
+from .imports import discord
 
 #Path where the colour codes are located
 path = r"Bot_Core\Brand\colours.scss"

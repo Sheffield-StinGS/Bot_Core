@@ -1,10 +1,6 @@
-#import os #Library for loading files
-from datetime import datetime #Library for various Date-Time related functions
-import discord #Discord API Library
-from discord.ext import commands #Bot specific functionality
 from .colours import colour_list #Imports the defined stings colours in python form
+from .imports import *
 
-import json #Library for interacting with the Config file
 #Loads the General config file and sets the core config variable
 config_file = open("config.json")
 config = json.load(config_file)
