@@ -53,5 +53,5 @@ def main():
         help_menu.set_thumbnail(url="https://ssago.org/img/clubs/logos/23.png")
         for command in bot.commands:
             help_menu.add_field(name=command.name, value=command.help, inline=False)
-        help_menu.set_footer(text="Any Problems, please contact Oscar Lodge or the StinGS Webmaster")
+        help_menu.set_footer(text="Any Problems, please contact Oscar Lodge (@ShadowedLord05) or the StinGS Webmaster (webmaster@stings.ssago.org)")
         await ctx.send(embed=help_menu)
